@@ -3,6 +3,7 @@ import User from "../../__atoms/User/User";
 import Reply from "../../__atoms/Reply/Reply";
 import Us from "../../../assets/images/Our Pfp.svg";
 import Delete from "../../__atoms/Delete/Delete";
+import Line from "../../__atoms/Line/Line";
 
 function Compiler({ OriginalPoster, Pfp, Ago, Text, TrashClick }) {
   const [ReplyVisibilty, setReplyVisibility] = useState(false);
@@ -44,20 +45,23 @@ function Compiler({ OriginalPoster, Pfp, Ago, Text, TrashClick }) {
             localStorage.setItem("reply", e.target.value);
           }}
         />
-        <div className="w-full">
-          {replies.map((id, key) => (
-            <User
-              key={key}
-              You={true}
-              Username={"juliusomo"}
-              Text={text}
-              Pfp={Us}
-              id={id}
-              TrashClick={() => {
-                setIsVisible(true);
-              }}
-            />
-          ))}
+        <div className="w-full flex pl-[40px] gap-[40px]">
+          <Line />
+          <div className="gap-[24px] flex flex-col w-full">
+            {replies.map((id, key) => (
+              <User
+                key={key}
+                You={true}
+                Username={"juliusomo"}
+                Text={text}
+                Pfp={Us}
+                id={id}
+                TrashClick={() => {
+                  setIsVisible(true);
+                }}
+              />
+            ))}
+          </div>
         </div>
       </div>
       {isVisible && (

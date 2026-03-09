@@ -5,7 +5,7 @@ import Us from "../../../assets/images/Our Pfp.svg";
 import Delete from "../../__atoms/Delete/Delete";
 import Line from "../../__atoms/Line/Line";
 
-function Compiler({ OriginalPoster, Pfp, Ago, Text, TrashClick }) {
+function Compiler({ OriginalPoster, Pfp, Ago, Text, TrashClick, Id }) {
   const [ReplyVisibilty, setReplyVisibility] = useState(false);
   const [text, setText] = useState(localStorage.getItem("reply"));
   const [replies, setReplies] = useState([]);
@@ -31,6 +31,7 @@ function Compiler({ OriginalPoster, Pfp, Ago, Text, TrashClick }) {
           Pfp={Pfp}
           Ago={Ago}
           Text={Text}
+          Id={Id}
         />
         <Reply
           TagOP={"@" + OriginalPoster + " "}
@@ -50,6 +51,7 @@ function Compiler({ OriginalPoster, Pfp, Ago, Text, TrashClick }) {
           <div className="gap-[24px] flex flex-col w-full">
             {replies.map((id, key) => (
               <User
+                Id={Id}
                 key={key}
                 You={true}
                 Username={"juliusomo"}

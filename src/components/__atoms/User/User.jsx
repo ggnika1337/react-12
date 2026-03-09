@@ -5,11 +5,11 @@ import Like from "../../__atoms/Like/Like";
 import Trash from "../../../assets/images/Trash.svg";
 import Pen from "../../../assets/images/Pen.svg";
 
-function User({ Pfp, Username, Ago, Text, BtnClick, You, TrashClick }) {
+function User({ Pfp, Username, Ago, Text, BtnClick, You, TrashClick, Id }) {
   return (
     <>
       <div className="flex gap-[24px] max-w-[730px] w-full p-[24px] bg-white rounded-[10px]">
-        <Like />
+        <Like Id={Id} />
         <div className="flex flex-col gap-[20px] w-full">
           <div className="flex justify-between w-full">
             <div className="flex gap-[16px]">

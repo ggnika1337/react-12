@@ -11,6 +11,7 @@ function Comments() {
     <>
       <div className="flex flex-col gap-[20px]">
         <Compiler
+          Id={1}
           Ago={"1 Month Ago"}
           Pfp={Amy}
           OriginalPoster={OriginalPoster}
@@ -19,6 +20,7 @@ function Comments() {
           }
         />
         <Compiler
+          Id={2}
           Text={
             "Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!"
           }

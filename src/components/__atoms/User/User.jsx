@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ReplyImg from "../../../assets/images/reply.svg";
-import Reply from "../Reply/Reply";
 import Like from "../../__atoms/Like/Like";
 import Trash from "../../../assets/images/Trash.svg";
 import Pen from "../../../assets/images/Pen.svg";

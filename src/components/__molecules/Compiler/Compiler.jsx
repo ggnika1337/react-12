@@ -1,11 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import User from "../../__atoms/User/User";
 import Reply from "../../__atoms/Reply/Reply";
 import Us from "../../../assets/images/Our Pfp.svg";
 import Delete from "../../__atoms/Delete/Delete";
 import Line from "../../__atoms/Line/Line";
 
-function Compiler({ OriginalPoster, Pfp, Ago, Text, TrashClick, Id }) {
+function Compiler({ OriginalPoster, Pfp, Ago, Text, TrashClick, Id, ReplyId }) {
   const [ReplyVisibilty, setReplyVisibility] = useState(false);
   const [text, setText] = useState(localStorage.getItem("reply"));
   const [replies, setReplies] = useState([]);
@@ -43,7 +43,7 @@ function Compiler({ OriginalPoster, Pfp, Ago, Text, TrashClick, Id }) {
           }}
           onChange={(e) => {
             setText(e.target.value);
-            localStorage.setItem("reply", e.target.value);
+            localStorage.setItem(`reply_${ReplyId}`, e.target.value);
           }}
         />
         <div className="w-full flex pl-[40px] gap-[40px]">
@@ -70,6 +70,7 @@ function Compiler({ OriginalPoster, Pfp, Ago, Text, TrashClick, Id }) {
         <Delete
           Delete={() => {
             setIsVisible(false);
+            localStorage.removeItem(`reply_${ReplyId}`);
           }}
           Cancel={() => {
             setIsVisible(false);

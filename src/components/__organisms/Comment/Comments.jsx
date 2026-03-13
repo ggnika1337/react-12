@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import Compiler from "../../__molecules/Compiler/Compiler";
 import Amy from "../../../assets/images/Amy.svg";
 import Max from "../../../assets/images/Max.svg";
-import Reply from "../../__atoms/Reply/Reply";
 
 function Comments() {
   const [OriginalPoster, setOriginalPoster] = useState("amyrobson");
@@ -12,6 +11,7 @@ function Comments() {
       <div className="flex flex-col gap-[20px]">
         <Compiler
           Id={1}
+          ReplyId={1}
           Ago={"1 Month Ago"}
           Pfp={Amy}
           OriginalPoster={OriginalPoster}
@@ -21,6 +21,7 @@ function Comments() {
         />
         <Compiler
           Id={2}
+          ReplyId={2}
           Text={
             "Woah, your project looks awesome! How long have you been coding for? I’m still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!"
           }
@@ -28,7 +29,6 @@ function Comments() {
           Pfp={Max}
           OriginalPoster={"maxblagun"}
         />
-        <Reply />
       </div>
     </>
   );

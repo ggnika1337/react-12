@@ -26,7 +26,7 @@ function Like({ Id }) {
 
   return (
     <>
-      <div className="rounded-[10px] min-w-[40px] flex items-center justify-center flex-col gap-[20px] bg-[#F5F6FA] py-[12px] px-[3px]">
+      <div className="rounded-[10px] min-w-[40px] flex items-center justify-center flex-col gap-[20px] bg-[#F5F6FA] py-[12px] px-[3px] max-md:flex-row max-md:h-[40px] max-md:w-[100px]">
         <button onClick={like}>
           <img className="opacity-50 hover:opacity-100" src={Plus} alt="" />
         </button>

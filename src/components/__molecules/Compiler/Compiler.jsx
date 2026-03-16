@@ -5,7 +5,17 @@ import Us from "../../../assets/images/Our Pfp.svg";
 import Delete from "../../__atoms/Delete/Delete";
 import Line from "../../__atoms/Line/Line";
 
-function Compiler({ OriginalPoster, Pfp, Ago, Text, TrashClick, Id, ReplyId }) {
+function Compiler({
+  OriginalPoster,
+  Pfp,
+  Ago,
+  Text,
+  TrashClick,
+  Id,
+  ReplyId,
+  buttonText,
+  You,
+}) {
   const [ReplyVisibilty, setReplyVisibility] = useState(false);
   const [text, setText] = useState(localStorage.getItem("reply"));
   const [replies, setReplies] = useState([]);
@@ -32,11 +42,18 @@ function Compiler({ OriginalPoster, Pfp, Ago, Text, TrashClick, Id, ReplyId }) {
           Ago={Ago}
           Text={Text}
           Id={Id}
+          You={You}
+          TrashClick={() => {
+            setIsVisible(true);
+          }}
         />
         <Reply
           TagOP={"@" + OriginalPoster + " "}
           ReplyVisibilty={ReplyVisibilty}
           ReplyClick={(e) => {
+            if (text === "") {
+              return;
+            }
             e.preventDefault();
             setReplies([...replies, replies.length + 1]);
             setReplyVisibility(false);
@@ -45,13 +62,14 @@ function Compiler({ OriginalPoster, Pfp, Ago, Text, TrashClick, Id, ReplyId }) {
             setText(e.target.value);
             localStorage.setItem(`reply_${ReplyId}`, e.target.value);
           }}
+          buttonText={buttonText}
         />
-        <div className="w-full flex pl-[40px] gap-[40px]">
+        <div className="w-full flex pl-[40px] gap-[40px] max-md:pl-[16px] max-md:gap-[16px]">
           <Line />
           <div className="gap-[24px] flex flex-col w-full">
             {replies.map((id, key) => (
               <User
-                Id={Id}
+                Id={ReplyId}
                 key={key}
                 You={true}
                 Username={"juliusomo"}

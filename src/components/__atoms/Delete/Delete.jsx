@@ -6,7 +6,7 @@ function Delete({ Ref, Delete, Cancel }) {
       <div className="fixed inset-0 bg-black/50">
         <div
           ref={Ref}
-          className="w-[400px] h-[252px] p-[32px] bg-white flex flex-col gap-[20px] rounded-[8px] fixed inset-0 m-auto"
+          className="w-[400px] h-[252px] p-[32px] bg-white flex flex-col gap-[20px] rounded-[8px] fixed inset-0 m-auto max-md:w-[343px] max-md:h-[224px] max-md:p-[14px]"
         >
           <h1 className="text-[#334253] font-[600] text-[24px]">
             Delete comment

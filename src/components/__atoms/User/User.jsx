@@ -7,7 +7,7 @@ import Pen from "../../../assets/images/Pen.svg";
 function User({ Pfp, Username, Ago, Text, BtnClick, You, TrashClick, Id }) {
   return (
     <>
-      <div className="flex gap-[24px] max-w-[730px] w-full p-[24px] bg-white rounded-[10px]">
+      <div className="flex gap-[24px] max-w-[730px] w-full p-[24px] bg-white rounded-[10px] relative max-md:flex-col-reverse">
         <Like Id={Id} />
         <div className="flex flex-col gap-[20px] w-full">
           <div className="flex justify-between w-full">
@@ -26,7 +26,7 @@ function User({ Pfp, Username, Ago, Text, BtnClick, You, TrashClick, Id }) {
               </span>
             </div>
             <div
-              className={`${You ? "" : "hidden"} font-[600] text-[16px] flex gap-[20px]`}
+              className={`${You ? "" : "hidden"} font-[600] text-[16px] flex gap-[20px] max-md:absolute max-md:right-[16px] max-md:bottom-[24px]`}
             >
               <div
                 onClick={TrashClick}
@@ -42,7 +42,7 @@ function User({ Pfp, Username, Ago, Text, BtnClick, You, TrashClick, Id }) {
             </div>
             <div
               onClick={BtnClick}
-              className={`flex gap-[7px] h-[20px] items-center hover:opacity-50 cursor-pointer ${You ? "hidden" : ""}`}
+              className={`flex gap-[7px] h-[20px] items-center hover:opacity-50 cursor-pointer ${You ? "hidden" : ""} max-md:absolute max-md:right-[16px] max-md:bottom-[24px]`}
             >
               <img className={`w-[14px] h-[12px] `} src={ReplyImg} />
               <h1 className={`text-[#5357B6] text-[16px] font-[700]`}>Reply</h1>
